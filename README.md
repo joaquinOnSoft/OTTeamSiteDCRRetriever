@@ -227,7 +227,15 @@ Having in mind the expected output of our query, we can set the `Appearance` of 
 
 ## Using our component
 
+Follow these steps to use our component in a page:
 
+ - Go to `Experience Studio`
+ - Click on `Sites`
+ - Click on `New Page`
+ 
+   ![New page](images/teamsite-experience-studio-new-page.png)
+ 
+ 
 
 ## Environment setup 
 
