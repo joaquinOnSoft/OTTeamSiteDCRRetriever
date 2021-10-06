@@ -125,33 +125,6 @@ In our example, LSCS API will return and XML that looks like this:
 		<Result>
 			<root>
 				<results>
-					<document id="7c49c2d2e18d36379011f878c32286a3" path="templatedata/Economy/Market/data/mercado-la-nave.xml" uri="http://localhost:1876/lscs/v1//document/id/7c49c2d2e18d36379011f878c32286a3/context/3b243e629f0f389d6af5deb8c8991108">
-						<metadata>
-							<field name="area">/default/main/IAM/WORKAREA/default</field>
-							<field name="TeamSite/Metadata/Locale">en_US</field>
-							<field name="TeamSite/LiveSite/Id">ktedkycs</field>
-							<field name="TeamSite/Metadata/CreationDate">2021-10-05 07:19:06</field>
-							<field name="iw_form_valid">true</field>
-							<field name="G11N/Localizable">true</field>
-							<field name="TeamSite/Templating/DCR/Type">Economy/Market</field>
-							<field name="ast_id">ktedkycs</field>
-							<field name="AreaRelativePath">templatedata/Economy/Market/data/mercado-la-nave.xml</field>
-							<field name="LatestModifiedDate">2021-10-05 07:19:32</field>
-							<field name="StagingVpath">/default/main/IAM/STAGING</field>
-							<field name="BranchVpath">/default/main/IAM</field>
-							<field name="G11N/Locale">es_ES</field>
-							<field name="AbsoluteVpath">/default/main/IAM/WORKAREA/default/templatedata/Economy/Market/data/mercado-la-nave.xml</field>
-							<field name="ast_last_modified_date">2021-10-05 07:19:32</field>
-							<field name="ast_path">templatedata/Economy/Market/data/mercado-la-nave.xml</field>
-							<field name="TeamSite/Assocation/Version">1</field>
-						</metadata>
-						<content>
-							<Root>
-								<name>La Nave</name>
-								<highlightedImage>/images/content/international-lab.jpg</highlightedImage>
-							</Root>
-						</content>
-					</document>
 					<document id="4baec5cb35be39804bf52a50e66d7f05" path="templatedata/Economy/Market/data/mercado-san-cristobal.xml" uri="http://localhost:1876/lscs/v1//document/id/4baec5cb35be39804bf52a50e66d7f05/context/1e8b456836d4483aec07994773ded6d9">
 						<metadata>
 							<field name="area">/default/main/IAM/WORKAREA/default</field>
@@ -186,7 +159,7 @@ In our example, LSCS API will return and XML that looks like this:
 </Properties>
 ```
 
-Having in mind the expected outpur of our query, we can set the `Appearance` of our component:
+Having in mind the expected output of our query, we can set the `Appearance` of our component:
 
 ```xslt
 <!DOCTYPE html-entities SYSTEM "http://www.interwoven.com/livesite/xsl/xsl-html.dtd">
@@ -237,6 +210,24 @@ Having in mind the expected outpur of our query, we can set the `Appearance` of 
    </xsl:template>
 </xsl:stylesheet>
 ```
+
+> NOTE: This is a simple HTML example. You must use the HTML that fits your needs in terms of presentation.
+
+ - Click on `Save and Close`
+ 
+ - Click on the check box close to your component
+ - Click on `Submit` button
+ 
+ ![Submit component](images/teamsite-experience-studio-publish-component.png)
+ 
+ - Click on `Run job`
+ 
+  ![Publish component. Run job](images/teamsite-experience-studio-publish-component-run-job.png)
+ 
+
+## Using our component
+
+
 
 ## Environment setup 
 
