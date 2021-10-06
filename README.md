@@ -1,5 +1,7 @@
 # OpenText TeamSite DCR retriever
 
+OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
+
 ## About TeamSite
 OpenText™ TeamSite™ is an easy-to-use, modern website content management system that helps 
 organizations create personalized and visually rich digital customer experiences optimized 
@@ -9,9 +11,9 @@ composite applications, collaboration sites and portals, to make delivering outs
 experiences easier. From a single interface, users can author, test, target and publish their 
 content as well as manage rich media, design websites and create mobile applications.
 
-## Create a Data Content Record (DCR)
+## Create a Content Template
 
-Follow these steps to create a DCR:
+Follow these steps to create a **Content Template**:
 
 > NOTE: you can create your own DCR that fit your needs
 
@@ -34,7 +36,7 @@ Follow these steps to create a DCR:
    
 ## Create a Content Item   
 
-Follow these steps to create a Content Item:
+Follow these steps to create a **Content Item**, former Data Content Record (DCR):
 
    - Go to `Experience Studio`
    - Click on `Assets > Content items` on the left hand side menu
@@ -49,7 +51,7 @@ Follow these steps to create a Content Item:
       
    - Click on `Finish` button
    
-Repeat these steps several times to 
+Repeat these steps several times to have some content available. (We'll use it later) 
 
 ## Create a custom component
 Follow these steps to create a new component that use the class that we have created in this project:
@@ -102,7 +104,7 @@ The `output` folder of this project contains a jar file with the classes to retr
 TeamSite's LSCS API (Live Site Content Site API).
 
 #### Deploy for development/testing your component
-Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` folder of your environment:
+Upload the jar file, `OTTeamSiteDCRRetriever20.4.jar` in our example, to the `lib` folder of your environment:
 
 ``` 
 /usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/lib 
@@ -112,7 +114,7 @@ Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` fo
 > You'll need to publish the page that contains the component to see the results.
 
 #### Deploy for real live (component tested and ready to use)
-Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` folder of your environment:
+Upload the jar file, `OTTeamSiteDCRRetriever20.4.jar` in our example, to the `lib` folder of your environment:
 
 ``` 
 /usr/Interwoven/TeamSite/local/config/lib/content_center/livesite_customer_src/lib 
