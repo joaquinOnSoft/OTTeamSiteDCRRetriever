@@ -229,14 +229,33 @@ Having in mind the expected output of our query, we can set the `Appearance` of 
 
 Follow these steps to use our component in a page:
 
- - Go to `Experience Studio`
- - Click on `Sites`
- - Click on `New Page`
+   - Go to `Experience Studio`
+   - Click on `Sites`
+   - Click on `New Page`
  
    ![New page](images/teamsite-experience-studio-new-page.png)
- 
- 
+   
+   - Click on `Add Component`
 
+   ![Add Component](images/teamsite-experience-studio-new-page-add-component.png)   
+
+   - Select our component under the `Custom components` folder struture
+   
+   ![Add Component](images/teamsite-experience-studio-new-page-add-component-pop-up.png)    
+   
+   - Close editing window
+   
+   ![Close editing window](images/teamsite-experience-studio-close-edit-window.png)    
+   
+   - Click on `...` icon    
+   - Click on `Publish Now` menu item    
+   
+   ![Close editing window](images/teamsite-experience-studio-close-edit-window.png)    
+   
+   - Select the page and click on `Publish Now` button    
+   
+It's done. Now you can check your page in the live site. 
+   
 ## Environment setup 
 
 ### Deploy jar file
