@@ -94,7 +94,9 @@ Follow these steps to create a new component that use the class that we have cre
 </Data>
 ```
 
-> **NOTE**: `com.opentext.teamsite.sc.dcr.DCRRetriever` is the class created by us in this project
+> **NOTE**: `com.opentext.teamsite.sc.dcr.DCRRetriever` is the class created by us in this project.
+> `documentQuery` parameter defines the query string that we'll use to retrieve information using
+> the **LiveSite Content Services (LSCS) API**.
 
 ## Environment setup 
 
