@@ -250,7 +250,7 @@ Follow these steps to use our component in a page:
    - Click on `...` icon    
    - Click on `Publish Now` menu item    
    
-   ![Close editing window](images/teamsite-experience-studio-close-edit-window.png)    
+   ![Publish Now](teamsite-experience-studio-publish-now-page.png)    
    
    - Select the page and click on `Publish Now` button    
    
