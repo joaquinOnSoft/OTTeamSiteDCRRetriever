@@ -11,6 +11,27 @@ content as well as manage rich media, design websites and create mobile applicat
 
 ## Create a Data Content Record (DCR)
 
+Follow these steps to create a DCR:
+
+> NOTE: you can create your own DCR that fit your needs
+
+   - Go to `Experience Studio`
+   - Click on `Assets > Content items` on the left hand side menu
+   
+   ![Click on 'Assets > Content items'](images/teamsite-experience-studio-new-content-template.png)
+   
+   - Click on `New Content Template` button
+
+   - Set the following fields:
+      - **Name**: Market      
+      - **Category**: Economy
+   - Drag & drop the following Data Elements:
+      - `Text`, let's call it **name** 
+      - `Browser`, let's call it **highlightedImage** 
+
+   ![Click on 'Assets > Content items'](images/teamsite-experience-studio-create-content-template.png)
+   
+
 ## Create a custom component
 Follow these steps to create a new component that use the class that we have created in this project:
 
@@ -65,7 +86,7 @@ TeamSite's LSCS API (Live Site Content Site API).
 Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` folder of your environment:
 
 ``` 
-	/usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/lib 
+/usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/lib 
 ```
 
 > **IMPORTANT**: This speed up the testing process, but the preview of the process won't work. 
@@ -75,12 +96,12 @@ Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` fo
 Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` folder of your environment:
 
 ``` 
-	/usr/Interwoven/TeamSite/local/config/lib/content_center/livesite_customer_src/lib 
+/usr/Interwoven/TeamSite/local/config/lib/content_center/livesite_customer_src/lib 
 ```
 
 ```
-	cd /usr/Interwoven/TeamSite/local/config/lib/content_center/livesite_customer_src
-	./build.sh 	
+cd /usr/Interwoven/TeamSite/local/config/lib/content_center/livesite_customer_src
+./build.sh 	
 ```
 
 ### Enable log messages in log4j
@@ -88,13 +109,13 @@ Upload the jar file, `OTTeamSiteEconomy20.4.jar` in our example, to the `lib` fo
 Browse to the following folder:
 
 ```
-	cd /usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/classes
+cd /usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/classes
 ```
 
 Edit the `log4j.xml` file and add the following tag:
 
 ```
-	<category name="com.opentext.teamsite.sc.dcr.DCRRetriever"><priority value="DEBUG"/></category>
+<category name="com.opentext.teamsite.sc.dcr.DCRRetriever"><priority value="DEBUG"/></category>
 ```
 
 > NOTE: `com.opentext.teamsite.sc.economy.DCRRetriever` is the class that we have created
@@ -104,15 +125,15 @@ Edit the `log4j.xml` file and add the following tag:
 Once you have deployed the jar, execute the following commands to restart Tomcat:
 
 ```
-	cd /usr/Interwoven/LiveSiteDisplayServices/runtime/
-	ls -l
-	./run.linux.sh stop
+cd /usr/Interwoven/LiveSiteDisplayServices/runtime/
+ls -l
+./run.linux.sh stop
 ```
 	
 Wait 2 minutes and run this command:
 	
 ```	
-	./run.linux.sh start
+./run.linux.sh start
 ```
 
 ### Check you component logs
@@ -120,9 +141,9 @@ Wait 2 minutes and run this command:
 Execute the following commands in a terminal to see the logs of your component:
 
 ```
-	cd /usr/Interwoven/LiveSiteDisplayServices/runtime/tomcat/logs/
-	cat /dev/null > livesite.runtime.log
-	clear
-	tail -f livesite.runtime.log	
+cd /usr/Interwoven/LiveSiteDisplayServices/runtime/tomcat/logs/
+cat /dev/null > livesite.runtime.log
+clear
+tail -f livesite.runtime.log	
 ```
 
