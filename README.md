@@ -39,13 +39,13 @@ Follow these steps to create a Content Item:
    - Go to `Experience Studio`
    - Click on `Assets > Content items` on the left hand side menu
 
-   ![New Content Item](teamsite-experience-studio-new-content-item.png)
+   ![New Content Item](images/teamsite-experience-studio-new-content-item.png)
    
    - Click on `New Content Item` button
 
    - Add values to the Content Item
       
-   ![Edit Content Item](teamsite-experience-studio-edit-content-item.png)
+   ![Edit Content Item](images/teamsite-experience-studio-edit-content-item.png)
       
    - Click on `Finish` button
    
