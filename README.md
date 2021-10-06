@@ -31,6 +31,25 @@ Follow these steps to create a DCR:
 
    ![Click on 'Assets > Content items'](images/teamsite-experience-studio-create-content-template.png)
    
+   
+## Create a Content Item   
+
+Follow these steps to create a Content Item:
+
+   - Go to `Experience Studio`
+   - Click on `Assets > Content items` on the left hand side menu
+
+   ![New Content Item](teamsite-experience-studio-new-content-item.png)
+   
+   - Click on `New Content Item` button
+
+   - Add values to the Content Item
+      
+   ![Edit Content Item](teamsite-experience-studio-edit-content-item.png)
+      
+   - Click on `Finish` button
+   
+Repeat these steps several times to 
 
 ## Create a custom component
 Follow these steps to create a new component that use the class that we have created in this project:
