@@ -319,6 +319,8 @@ Wait 2 minutes and run this command:
 
 ### Check you component logs
 
+#### TeamSite LiveSite logs
+
 Execute the following commands in a terminal to see the logs of your component:
 
 ```
@@ -328,3 +330,9 @@ clear
 tail -f livesite.runtime.log	
 ```
 
+#### TeamSite Preview logs
+
+```
+cd /usr/Interwoven/TeamSite/local/logs/iwui
+tail -f livesite.preview.log
+```
