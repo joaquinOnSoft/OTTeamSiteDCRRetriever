@@ -182,7 +182,7 @@ Having in mind the expected output of our query, we can set the `Appearance` of 
                <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
                   <div class="uk-slider-container">
                      <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-4@m uk-child-width-1-5@l" data-uk-grid="true">
-                        <xsl:for-each select="Properties//Result/root/results/document/content/Root">
+                        <xsl:for-each select="Properties/Data/Result/root/results/document/content/Root">
                            <li>
                               <a href="mercado-individual.html" class="card-mercados-wrap" aria-label="Ver mercado">
                                  <div class="card-mercados">
