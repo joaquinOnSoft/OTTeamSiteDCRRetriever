@@ -32,8 +32,8 @@ public class DCRRetriever {
 	public Document getDCRAssets(RequestContext context) {
 		Document doc = Dom4jUtils.newDocument();
 		Element rootElement = doc.addElement("root");
-		Element resultsElement = rootElement.addElement("results");
-
+		Element resultsElement = rootElement.addElement("results");		
+		
 		@SuppressWarnings("deprecation")
 		String queryString = context.getParameterString("documentQuery");
 		logger.info("QUERY STRING: " + queryString);
