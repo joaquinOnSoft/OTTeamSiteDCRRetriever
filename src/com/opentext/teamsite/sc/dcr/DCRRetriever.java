@@ -169,14 +169,12 @@ public class DCRRetriever {
 
 			logger.info("Client created.  Project name: " + projectName);		
 			
-			if (context.isPreview()) {
+			if (context.isPreview() || isEdit(context)) {
 				logger.info("Is preview");
 
 				String contextName = context.getSite().getArea();
 				client.setContextString(contextName);			
 			}	
-
-			logger.info("AJAX URL" + context.getAjaxURL());
 			
 			@SuppressWarnings("deprecation")
 			String id = context.getParameterString("id");
