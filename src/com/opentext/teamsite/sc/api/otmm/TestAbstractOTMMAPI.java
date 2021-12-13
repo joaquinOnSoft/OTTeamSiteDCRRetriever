@@ -7,9 +7,7 @@ import java.util.Properties;
 
 import org.junit.jupiter.api.BeforeAll;
 
-import junit.framework.TestCase;
-
-public class TestAbstractOTMMAPI extends TestCase {
+public class TestAbstractOTMMAPI{
 	
 	protected static Properties prop = null;
 	

@@ -145,7 +145,7 @@ public class OTMMAPIWrapper {
 					sessionId = json.getJSONObject("session_resource").getJSONObject("session").getString("id");
 				}
 			} catch (JSONException e) {
-				logger.error("/otmmapi/v6/sessions (Response to JSON convertsion) ", e);
+				logger.error("/otmmapi/v6/sessions (Response to JSON conversion) ", e);
 			}
 		}
 
@@ -187,7 +187,7 @@ public class OTMMAPIWrapper {
 					}
 				}
 			} catch (JSONException e) {
-				logger.error("/otmmapi/v6/sessions (Response to JSON convertsion) ", e);
+				logger.error("/otmmapi/v6/collections (Response to JSON conversion) ", e);
 			}
 		}
 		
@@ -236,7 +236,7 @@ public class OTMMAPIWrapper {
 					}
 				}
 			} catch (JSONException e) {
-				logger.error("/otmmapi/v6/sessions (Response to JSON convertsion) ", e);
+				logger.error("/otmmapi/v6/collections (Response to JSON conversion) ", e);
 			}
 		}
 		
