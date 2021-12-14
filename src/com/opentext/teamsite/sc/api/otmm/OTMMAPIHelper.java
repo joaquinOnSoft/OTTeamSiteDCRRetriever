@@ -43,7 +43,7 @@ public class OTMMAPIHelper {
 		this.password = password;
 	}
 	
-	List<OTMMAsset> retrieveAllAssetsOfACollectionByName(String collectionName){
+	public List<OTMMAsset> retrieveAllAssetsOfACollectionByName(String collectionName){
 		List<OTMMAsset> assets = null;
 		
 		OTMMAPIWrapper wrapper = new OTMMAPIWrapper(urlBase, version);

@@ -1,85 +1,99 @@
 package com.opentext.teamsite.sc.api.otmm.util;
 
-
-import java.io.StringWriter;
+import java.util.List;
 import java.util.Map;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.apache.log4j.Logger;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
 
+import com.opentext.teamsite.sc.api.otmm.beans.OTMMAsset;
 import com.opentext.teamsite.sc.api.otmm.beans.OTMMCollection;
 
 public class XMLUtil {
 	static final Logger logger = Logger.getLogger(XMLUtil.class);
 
+	public static String docToXML(Document doc) {
+		String xmlString = null;
+
+		return xmlString;
+	}
+
 	/**
 	 * 
 	 * @param otmmCollection
 	 * @return
-	 * @see https://www.journaldev.com/1112/how-to-write-xml-file-in-java-dom-parser
-	 * @see https://howtodoinjava.com/java/xml/xml-to-string-write-xml-file/
+	 * @see https://www.tutorialspoint.com/java_xml/java_dom4j_create_document.htm
 	 */
-	public static String otmmCollectionToXML(Map<String, OTMMCollection> otmmCollections) {
-		String xmlString = null;
-		
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder dBuilder;
-		try {
-			dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.newDocument();
-			
-			//add elements to Document
-            Element rootElement = doc.createElement("Collections");
-            //append root element to document
-            doc.appendChild(rootElement);
+	public static Document assetsToDoc(List<OTMMAsset> assets) {
+		Document doc = DocumentHelper.createDocument();
+		Element root = doc.addElement("collection");
 
-            OTMMCollection collection = null;
-            for (String collectionId : otmmCollections.keySet()) {
-            	collection = otmmCollections.get(collectionId);
-            	
-            	Element collectionElement = doc.createElement("collection");
-            	//append first child element to root element
-            	collectionElement.appendChild(createNode(doc, collectionElement, "id", collection.getId()));            
-            	collectionElement.appendChild(createNode(doc, collectionElement, "name", collection.getName()));
-                collectionElement.appendChild(createNode(doc, collectionElement, "ownerName", collection.getOwnerName()));
-                
-                rootElement.appendChild(collectionElement);                
-			}
-            
-            //A character stream that collects its output in a string buffer, 
-            //which can then be used to construct a string.
-            StringWriter writer = new StringWriter();
-            
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            //for pretty print
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-
-            //transform document to string 
-            transformer.transform(new DOMSource(doc), new StreamResult(writer));
-
-            xmlString = writer.getBuffer().toString();  
-		} catch (Exception e) {
-			logger.error("", e);
+		for (OTMMAsset asset: assets) {
+			Element assetElement = root.addElement("asset");
+			assetElement.addElement("id").addText( asset.getId());			
+			assetElement.addElement("name").addText(asset.getName());
+			assetElement.addElement("mimeType").addText(asset.getMimeType());
+			assetElement.addElement("deliveryServiceURL").addText(asset.getDeliveryServiceURL());
 		}
 
+		return doc;
+	}
+
+	/**
+	 * Convert a list of OTMM assets to a XML string
+	 * 
+	 * @param assets - OTMM assets
+	 * @return XML string
+	 */
+	public static String assetsToXML(List<OTMMAsset> assets) {
+		String xmlString = null;
+		
+		Document doc = assetsToDoc(assets);
+		if(doc != null) {
+			xmlString = doc.asXML();
+		}
+		
 		return xmlString;
 	}
-	
-    //utility method to create text node
-    private static Node createNode(Document doc, Element element, String name, String value) {
-        Element node = doc.createElement(name);
-        node.appendChild(doc.createTextNode(value));
-        return node;
-    }	
+
+	/**
+	 * 
+	 * @param otmmCollections
+	 * @return
+	 * @see https://www.tutorialspoint.com/java_xml/java_dom4j_create_document.htm
+	 */
+	public static Document otmmCollectionsToDoc(Map<String, OTMMCollection> otmmCollections) {
+		Document doc = DocumentHelper.createDocument();
+		Element root = doc.addElement("collections");
+		
+		OTMMCollection collection = null;		
+		for (String collectionId : otmmCollections.keySet()) {
+			collection = otmmCollections.get(collectionId);		
+			
+			Element collectionElement = root.addElement("collection");
+			collectionElement.addElement("id").addText( collection.getId());			
+			collectionElement.addElement("name").addText(collection.getName());
+			collectionElement.addElement("ownerName").addText(collection.getOwnerName());							
+		}
+		
+		return doc;
+	}
+
+	/**
+	 * 
+	 * @param otmmCollections
+	 * @return
+	 */
+	public static String otmmCollectionsToXML(Map<String, OTMMCollection> otmmCollections) {
+		String xmlString = null;
+
+		Document doc = otmmCollectionsToDoc(otmmCollections);
+		if(doc != null) {
+			xmlString = doc.asXML();
+		}
+						
+		return xmlString;
+	}
 }
