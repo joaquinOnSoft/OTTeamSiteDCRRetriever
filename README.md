@@ -88,13 +88,13 @@ Follow these steps to create a new component that use the class that we have cre
     <Parameters>
       <Datum ID="DOCUMENT-QUERY" Name="documentQuery" Type="String">q=TeamSite/Templating/DCR/Type:Economy/Market</Datum>
     </Parameters>
-    <Object Scope="local">com.opentext.teamsite.sc.dcr.DCRRetriever</Object>
+    <Object Scope="local">com.opentext.teamsite.sc.retriever.DCRRetriever</Object>
     <Method>getDCRAssets</Method>
   </External>
 </Data>
 ```
 
-> **NOTE**: `com.opentext.teamsite.sc.dcr.DCRRetriever` is the class created by us in this project.
+> **NOTE**: `com.opentext.teamsite.sc.retriever.DCRRetriever` is the class created by us in this project.
 > `documentQuery` parameter defines the query string that we'll use to retrieve information using
 > the **LiveSite Content Services (LSCS) API**.
 
@@ -296,7 +296,7 @@ cd /usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/classes
 Edit the `log4j.xml` file and add the following tag:
 
 ```
-<category name="com.opentext.teamsite.sc.dcr.DCRRetriever"><priority value="DEBUG"/></category>
+<category name="com.opentext.teamsite.sc.retriever.DCRRetriever"><priority value="DEBUG"/></category>
 ```
 
 > NOTE: `com.opentext.teamsite.sc.economy.DCRRetriever` is the class that we have created

@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectPackages({
-	"com.opentext.teamsite.sc.api.otmm",
-	"com.opentext.teamsite.sc.api.otmm.util"
+	"com.opentext.teamsite.sc.api.otmm",	
+	"com.opentext.teamsite.sc.api.otmm.util",
+	"com.opentext.teamsite.sc.retriever"
 	})
 @ExcludeClassNamePatterns("^.*Abstract.*$")
 public class TestAll {

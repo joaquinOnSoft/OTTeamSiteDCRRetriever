@@ -11,29 +11,29 @@ import com.interwoven.livesite.runtime.RequestContext;
 import com.interwoven.wcm.lscs.Client;
 import com.opentext.teamsite.sc.api.otmm.OTMMAPIHelper;
 import com.opentext.teamsite.sc.api.otmm.beans.OTMMAsset;
+import com.opentext.teamsite.sc.api.otmm.util.XMLUtil;
 
 public class OTMMRetriever extends AbstractRetriever {
 
 	/**
-	 * Get the `Content Items` of a given Category/Name or that match the given LSCS query.
+	 * Get the assets included in an OTMM collection
+	 * 
 	 * These are the parameters supported in TeamSite configuration:
-	 * 	- documentQuery: LSCA query string to be use. Some examples:
-	 * 			q=type:datasheet 
-	 * 			q=category:products&format=json
-	 * 	NOTE: If this parameter is specified in TeamSite the other parameters, 
-	 * 	`contentCategory` and `contentName`, and will be ignored
-	 * 	- contentCategory: Content template category
-	 * 	- contentName: Content template name
-	 *  - maxResults: Maximum number of result to be returned. 25 by default
+	 * 	- collection: (Mandatory) Collection name
+	 *  - url: (Optional) OTMM URL
+	 *  - user: (Optional) OTMM user
+	 *  - password: (Optional) OTMM password
 	 * @param context - Request context
-	 * @return XML Document to contains the content items 
-	 * that match with the search criteria
+	 * @return XML Document that contains the assets included in an OTMM collection
 	 */
 	@SuppressWarnings("deprecation")
-	public Document retrieveAllAssetsOfACollectionByName(RequestContext context) {
+	public Document retrieveAllAssetsOfACollectionByName(RequestContext context) {				
+		String url = null; 
+		String user = null;
+		String password = null;
+		String collectionName = null; 		
 		Document doc = null;
-		String collectionName = null;
-		
+				
 		try {
 			Client client = ContentService.getInstance().getContentClient(context);
 			String projectName = context.getSite().getBranch();
@@ -51,28 +51,44 @@ public class OTMMRetriever extends AbstractRetriever {
 			collectionName = context.getParameterString("collectionName");
 			logger.info("collectionName: " + collectionName);
 			
+			url = context.getParameterString("url");
+			user = context.getParameterString("user");
+			password = context.getParameterString("password");			
 		} catch (Exception ex) {
 			logger.error("Recovering component parameters: ", ex);
 		}
 		
 		if(collectionName != null) {
-			//load a properties file from class path, inside static method
-			Properties prop = new Properties();
-			try {
-				prop.load(OTMMRetriever.class.getClassLoader().getResourceAsStream("otmm-api.properties"));
-			} catch (IOException e) {
-				logger.error("Get properties file from classpath: ", e);
+			if(url == null ||  user == null || password == null) {
+				//load a properties file from class path
+				Properties prop = new Properties();
+				try {
+					prop.load(OTMMRetriever.class.getClassLoader().getResourceAsStream("otmm-api.properties"));
+				} catch (IOException e) {
+					logger.error("Get properties file from classpath: ", e);
+				}
+				
+				if(prop.contains("url")) {
+					url = prop.getProperty("url");
+				}
+				if(prop.contains("user")) {
+					user = prop.getProperty("user");
+				}
+				if(prop.contains("password")) {
+					password = prop.getProperty("password");
+				}				
 			}
-						
-			OTMMAPIHelper apiHelper = new OTMMAPIHelper(prop.getProperty("url"), 
-					prop.getProperty("user"), 
-					prop.getProperty("password"));
 			
-			List<OTMMAsset> assets = apiHelper.retrieveAllAssetsOfACollectionByName("Auckland");
-			//TODO  convert a org.dom4j.Document
-			//doc = XMLUtil.assetsToDoc(assets);
+			if(url != null &&  user != null && password != null) {
+				OTMMAPIHelper apiHelper = new OTMMAPIHelper(url, user, password);
+				
+				List<OTMMAsset> assets = apiHelper.retrieveAllAssetsOfACollectionByName(collectionName);
+				doc = XMLUtil.assetsToDoc(assets);
+			}
 			
-			logger.info("doc: " + doc.asXML());
+			if(doc != null) {
+				logger.info("doc: " + doc.asXML());
+			}
 		}
 				
 		return doc;		

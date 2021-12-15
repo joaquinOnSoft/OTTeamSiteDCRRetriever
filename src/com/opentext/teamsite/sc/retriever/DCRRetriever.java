@@ -1,4 +1,4 @@
-package com.opentext.teamsite.sc.dcr;
+package com.opentext.teamsite.sc.retriever;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -8,7 +8,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
@@ -24,19 +23,17 @@ import com.interwoven.wcm.lscs.Client;
 import com.interwoven.wcm.lscs.LSCSException;
 import com.interwoven.wcm.lscs.LSCSIterator;
 
-public class DCRRetriever {
-	static final Logger logger = Logger.getLogger(DCRRetriever.class);
-
+public class DCRRetriever extends AbstractRetriever {
 	private static final int MAX_RESULTS = 25;
 
 	private String getQueryString(RequestContext context) {
 		logger.info("Init getQueryString");
 
 		/*
-				@SuppressWarnings("deprecation")
-				String queryString = context.getParameterString("documentQuery");
-				logger.info("QueryString parameter: " + queryString);
-				*/
+		@SuppressWarnings("deprecation")
+		String queryString = context.getParameterString("documentQuery");
+		logger.info("QueryString parameter: " + queryString);
+		 */
 		String queryString = "";
 		try {
 			//if(queryString == null || queryString.compareTo("") == 0) {								
@@ -142,11 +139,6 @@ public class DCRRetriever {
 
 		return doc;			
 	}
-
-	private boolean isEdit(RequestContext context) {
-		return !context.isPreview() && !context.isRuntime();
-	}
-
 
 	/**
 	 * Get the `Content Item` that match the given Id.

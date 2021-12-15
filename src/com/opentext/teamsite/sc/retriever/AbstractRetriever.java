@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 
 import com.interwoven.livesite.runtime.RequestContext;
 
-public class AbstractRetriever {
+public abstract class AbstractRetriever {
 
 	protected static final Logger logger = Logger.getLogger(OTMMRetriever.class);
 
@@ -15,5 +15,4 @@ public class AbstractRetriever {
 	protected boolean isEdit(RequestContext context) {
 		return !context.isPreview() && !context.isRuntime();
 	}
-
 }
