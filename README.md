@@ -1,8 +1,8 @@
 # OpenText TeamSite DCR retriever
 
 **OpenText TeamSite components** to retrieve information:
-
-   - [DCR retriever](pages/DCRetriever.md) : OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
+                           
+   - [DCR retriever](pages/DCRRetriever.md) : OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
    - [OTMM Retriever](pages/OTMMRetriever.md): OpenText TeamSite component to retrieve assets included in an **OpenText Media Management (OTMM)** collection.
 
 
