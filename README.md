@@ -2,8 +2,8 @@
 
 **OpenText TeamSite components** to retrieve information:
 
-   - [DCR retriever](./DCRetriever.md) : OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
-   - [OTMM Retriever](./OTMMRetriever.md): OpenText TeamSite component to retrieve assets included in an **OpenText Media Management (OTMM)** collection.
+   - [DCR retriever](pages/DCRetriever.md) : OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
+   - [OTMM Retriever](pages/OTMMRetriever.md): OpenText TeamSite component to retrieve assets included in an **OpenText Media Management (OTMM)** collection.
 
 
 ## About TeamSite
@@ -23,24 +23,24 @@ Follow these steps to use our component in a page:
    - Click on `Sites`
    - Click on `New Page`
  
-   ![New page](images/teamsite-experience-studio-new-page.png)
+   ![New page](pages/images/teamsite-experience-studio-new-page.png)
    
    - Click on `Add Component`
 
-   ![Add Component](images/teamsite-experience-studio-new-page-add-component.png)   
+   ![Add Component](pages/images/teamsite-experience-studio-new-page-add-component.png)   
 
    - Select our component under the `Custom components` folder struture
    
-   ![Add Component](images/teamsite-experience-studio-new-page-add-component-pop-up.png)    
+   ![Add Component](pages/images/teamsite-experience-studio-new-page-add-component-pop-up.png)    
    
    - Close editing window
    
-   ![Close editing window](images/teamsite-experience-studio-close-edit-window.png)    
+   ![Close editing window](pages/images/teamsite-experience-studio-close-edit-window.png)    
    
    - Click on `...` icon    
    - Click on `Publish Now` menu item    
    
-   ![Publish Now](images/teamsite-experience-studio-publish-now-page.png)    
+   ![Publish Now](pages/images/teamsite-experience-studio-publish-now-page.png)    
    
    - Select the page and click on `Publish Now` button    
    
