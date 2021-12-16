@@ -39,7 +39,7 @@ Follow these steps to create a new component that use the class that we have cre
       <!-- Optional parameters -->
       <!-- 
 	      <Datum ID="OTMM-URL" Name="url" Type="String"></Datum>
-     	 <Datum ID="OTMM-USER" Name="user" Type="String"></Datum>
+	      <Datum ID="OTMM-USER" Name="user" Type="String"></Datum>
 	      <Datum ID="OTMM-PASSWORD" Name="password" Type="String"></Datum>                  
       -->
     </Parameters>

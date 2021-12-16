@@ -2,9 +2,8 @@
 
 **OpenText TeamSite components** to retrieve information:
                            
-   - [DCR retriever](pages/DCRRetriever.md) : OpenText TeamSite component to retrieve information, Content Items, using LSCS API.
-   - [OTMM Retriever](pages/OTMMRetriever.md): OpenText TeamSite component to retrieve assets included in an **OpenText Media Management (OTMM)** collection.
-
+   - [DCR retriever](pages/DCRRetriever.md) : TeamSite component to retrieve information, Content Items, using LSCS API.
+   - [OTMM Retriever](pages/OTMMRetriever.md): TeamSite component to retrieve assets included in an **OpenText Media Management (OTMM)** collection.
 
 ## About TeamSite
 OpenText™ TeamSite™ is an easy-to-use, modern website content management system that helps 
@@ -50,10 +49,9 @@ It's done. Now you can check your page in the live site.
 
 ### Deploy jar file
 
-The `output` folder of this project contains a jar file with the classes to retrieve assets 
-included in an **OpenText Media Management (OTMM)** collection..
+The `output` folder of this project contains a `jar`  file with the classes created.
 
-#### Deploy for development/testing your component
+#### Deploy for develop/test your component
 Upload the jar file, `OTTeamSiteDCRRetriever20.4.jar` in our example, to the `lib` folder of your environment:
 
 ``` 
@@ -85,11 +83,12 @@ cd /usr/Interwoven/LiveSiteDisplayServices/runtime/web/WEB-INF/classes
 
 Edit the `log4j.xml` file and add the following tag:
 
-```
+```xml
 <category name="com.opentext.teamsite.sc.retriever.DCRRetriever"><priority value="DEBUG"/></category>
+<category name="com.opentext.teamsite.sc.retriever.OTMMRetriever"><priority value="DEBUG"/></category>
 ```
 
-> NOTE: `com.opentext.teamsite.sc.economy.DCRRetriever` is the class that we have created
+> NOTE: `com.opentext.teamsite.sc.economy.*` are the classes that we have created
 
 ### Restart Tomcat
 

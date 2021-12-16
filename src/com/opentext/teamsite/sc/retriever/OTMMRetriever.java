@@ -53,7 +53,9 @@ public class OTMMRetriever extends AbstractRetriever {
 			
 			url = context.getParameterString("url");
 			user = context.getParameterString("user");
-			password = context.getParameterString("password");			
+			password = context.getParameterString("password");		
+			
+			logger.info("OTMM access info: " + url + " (" + user + ")");
 		} catch (Exception ex) {
 			logger.error("Recovering component parameters: ", ex);
 		}
@@ -76,7 +78,9 @@ public class OTMMRetriever extends AbstractRetriever {
 				}
 				if(prop.contains("password")) {
 					password = prop.getProperty("password");
-				}				
+				}		
+				
+				logger.info("OTMM access info (from properties): " + url + " (" + user + ")");
 			}
 			
 			if(url != null &&  user != null && password != null) {
